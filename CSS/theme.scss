@@ -87,6 +87,25 @@ div#page {
     content: none !important;
 }
 
+// Styling the swiper part
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
 // Remove the animations for users who don't want them
 @media (prefers-reduced-motion: no-preference) {
     .banner {
@@ -96,6 +115,7 @@ div#page {
             }
         }
     }
+
     // Slide-in of the sections at loading
     .fadeInBottom {
         animation: fadeInBottom ease 1s;
@@ -147,6 +167,13 @@ div#page {
             animation: rotate 8s linear infinite;
         }
     }
+
+    // Slide in for the titles
+    .slideTitle {
+        animation: slideTitle ease 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+    }
 }
 
 // All Keyframes
@@ -158,6 +185,7 @@ div#page {
         transform: translateY(0);
     }
 }
+
 @keyframes fadeInBottom {
     0% {
         transform: translateY(250px);
@@ -166,6 +194,16 @@ div#page {
         transform: translateY(0);
     }
 }
+
+@keyframes slideTitle {
+    0% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 @keyframes rotate {
     0% {
         transform: rotate(0deg);

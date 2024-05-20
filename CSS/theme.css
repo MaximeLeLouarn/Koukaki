@@ -77,6 +77,24 @@ div#page {
   content: none !important;
 }
 
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .banner .bannerContainerimg {
     animation: parallaxe 3s infinite;
@@ -124,6 +142,11 @@ div#page {
   .oscarSection::after {
     animation: rotate 8s linear infinite;
   }
+  .slideTitle {
+    animation: slideTitle ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
 }
 @keyframes fadeInTop {
   0% {
@@ -136,6 +159,14 @@ div#page {
 @keyframes fadeInBottom {
   0% {
     transform: translateY(250px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideTitle {
+  0% {
+    transform: translateY(100px);
   }
   100% {
     transform: translateY(0);

@@ -1,17 +1,12 @@
 // Animations au scroll
 // Calling the DOM elements with variables
 const fadeInBottom = document.querySelectorAll(".fadeIn");
+const slideInTitle = document.querySelectorAll(".slideTitle");
 
-// Implementing th functions
-// function slideInBottom() {
-//   fadeInBottomAll.classList.add("fadeInBottom");
-// }
-// function deSlideInBottom() {
-//   fadeInBottomAll.classList.remove("fadeInBottom");
-// }
-// function slideInBottom2() {}
+// Creating a variable to observ if the elements are visible on screen
 
-const observerBottom = new IntersectionObserver(
+// With the sections
+const observerSections = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -26,8 +21,34 @@ const observerBottom = new IntersectionObserver(
   }
 );
 
+// with the titles
+const observerTitles = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("slideTitle");
+        return;
+      } else {
+        entry.target.classList.remove("slideTitle");
+      }
+    });
+  },
+  {
+    rootMargin: "0px",
+    threshold: 0.3,
+  }
+);
+
+// Launching loops to observe desired elements
+
+// For the sections
 fadeInBottom.forEach((fade) => {
-  observerBottom.observe(fade);
+  observerSections.observe(fade);
+});
+
+// For the titles
+slideInTitle.forEach((slide) => {
+  observerTitles.observe(slide);
 });
 
 // Going through the scroll
