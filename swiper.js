@@ -1,21 +1,19 @@
-// import Swiper JS
-import Swiper from "swiper/bundle";
-// import Swiper styles
-import "swiper/css/bundle";
 // initialize Swiper
 const swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
+  spaceBetween: 95,
+  loop: true,
   coverflowEffect: {
-    rotate: 50,
+    rotate: 35,
     stretch: 0,
-    depth: 100,
+    depth: 35,
     modifier: 1,
     slideShadows: true,
   },
-  pagination: {
-    el: ".swiper-pagination",
+  autoplay: {
+    delay: 3000,
   },
 });
