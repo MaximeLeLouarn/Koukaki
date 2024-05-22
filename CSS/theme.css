@@ -62,6 +62,11 @@ div#page {
   top: 30%;
   left: 23%;
 }
+.story #place .invisibleMark {
+  display: none;
+  position: absolute;
+  top: -150px;
+}
 
 .oscarSection {
   padding-top: 110px;

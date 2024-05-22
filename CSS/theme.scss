@@ -70,6 +70,11 @@ div#page {
             top: 30%;
             left: 23%;
         }
+        .invisibleMark {
+            display: none;
+            position: absolute;
+            top: -150px;
+        }
     }
 }
 

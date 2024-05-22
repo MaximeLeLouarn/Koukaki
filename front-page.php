@@ -36,7 +36,8 @@ get_header();
             <article id="characters">
                 <div class="main-character fadeIn">
                     <h3>
-                        <span class="slideTitle">Les personnages</span>
+                        <span class="slideTitle">Les</span>
+                        <span class="slideTitle">personnages</span>
                     </h3>
                     <?php
                     get_template_part('catsTemplate');
@@ -44,6 +45,7 @@ get_header();
                 </div>
             </article>
             <article id="place" class="place fadeIn">
+                <div class="invisibleMark"></div>
                 <div>
                     <img class="bigCloud cloud" src="<?= get_stylesheet_directory_uri() . '/assets/big_cloud.png' ?>" alt="Gros nuage">
                     <img class="smallCloud cloud" src="<?= get_stylesheet_directory_uri() . '/assets/little_cloud.png' ?>" alt="Petit nuage">

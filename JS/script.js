@@ -51,22 +51,18 @@ slideInTitle.forEach((slide) => {
   observerTitles.observe(slide);
 });
 
-// Using scrollMagic for the clouds
-const flightPath = {
-  curviness: 1,
-  autorotate: true,
-  values: [
-    { x: 100, y: 20 },
-    { x: 300, y: 10 },
-  ],
-};
-const tween = new TimelineLite();
-tween.add(
-  TweenLite.to(".cloud", 1, {
-    bezier: flightPath,
-    ease: Power1.easeInOut,
-  })
-);
+// Using GSAP for the clouds
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin);
+gsap.to(".cloud", {
+  xPercent: 300,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".invisibleMark",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+  },
+});
 // Going through the scroll
 // Implementing the scroll
 // let scrollPosition = 0;
