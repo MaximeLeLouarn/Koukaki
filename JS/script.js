@@ -17,7 +17,7 @@ const observerSections = new IntersectionObserver(
   },
   {
     rootMargin: "0px",
-    threshold: 0.1,
+    threshold: 0,
   }
 );
 
@@ -35,7 +35,7 @@ const observerTitles = new IntersectionObserver(
   },
   {
     rootMargin: "0px",
-    threshold: 0.3,
+    threshold: 0,
   }
 );
 
@@ -51,6 +51,22 @@ slideInTitle.forEach((slide) => {
   observerTitles.observe(slide);
 });
 
+// Using scrollMagic for the clouds
+const flightPath = {
+  curviness: 1,
+  autorotate: true,
+  values: [
+    { x: 100, y: 20 },
+    { x: 300, y: 10 },
+  ],
+};
+const tween = new TimelineLite();
+tween.add(
+  TweenLite.to(".cloud", 1, {
+    bezier: flightPath,
+    ease: Power1.easeInOut,
+  })
+);
 // Going through the scroll
 // Implementing the scroll
 // let scrollPosition = 0;
