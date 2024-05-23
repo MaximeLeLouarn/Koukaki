@@ -54,7 +54,7 @@ slideInTitle.forEach((slide) => {
 // Using GSAP for the clouds
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin);
 gsap.to(".cloud", {
-  xPercent: 300,
+  xPercent: 200,
   ease: "none",
   scrollTrigger: {
     trigger: ".invisibleMark",

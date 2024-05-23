@@ -2,6 +2,20 @@ div#page {
   overflow: hidden;
 }
 
+.main-navigation {
+  display: flex;
+  justify-content: center;
+}
+.main-navigation .nav-menu {
+  width: 84%;
+  text-align: center;
+}
+.main-navigation .menu-toggle {
+  width: 16%;
+  text-align: center;
+  display: block;
+}
+
 .banner {
   background-image: none;
   min-height: 1px !important;
@@ -28,8 +42,8 @@ div#page {
   width: 66.66%;
   margin: auto;
 }
-.oscarSection .oscarContainer h3 {
-  text-align: start;
+.oscarSection .oscarContainer .oscarParagraphe {
+  text-align: center;
   padding: 0;
   background-image: url(../assets/orange_characters_bg.png);
 }
@@ -66,6 +80,9 @@ div#page {
   display: none;
   position: absolute;
   top: -150px;
+}
+.story #place h3 {
+  margin-bottom: 0;
 }
 
 .oscarSection {
@@ -106,8 +123,8 @@ div#page {
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
 }
 
 .swiper-slide img {
@@ -162,11 +179,21 @@ div#page {
   .oscarSection::after {
     animation: rotate 8s linear infinite;
   }
+  .commonTitle {
+    top: 100px;
+    position: relative;
+    opacity: 0;
+  }
+  .rareTitle {
+    top: 50px;
+    position: relative;
+    opacity: 0;
+  }
   .slideTitle {
-    animation: slideTitle linear 5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: both;
-    overflow-y: hidden;
+    position: relative;
+    top: 0px;
+    transition: top 5s;
+    opacity: 1;
   }
 }
 @keyframes fadeInTop {
@@ -187,14 +214,6 @@ div#page {
   100% {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-@keyframes slideTitle {
-  0% {
-    transform: translateY(100px);
-  }
-  100% {
-    transform: translateY(0);
   }
 }
 @keyframes rotate {
@@ -223,13 +242,5 @@ div#page {
   }
   100% {
     transform: translate3d(0, 0, 20px);
-  }
-}
-@keyframes cloudsGoOnHolidays {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateY(60%);
   }
 }/*# sourceMappingURL=theme.css.map */
