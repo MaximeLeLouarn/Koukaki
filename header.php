@@ -26,21 +26,54 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
 
 	<header id="masthead" class="site-header">
+
 		<nav id="site-navigation" class="main-navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-            <ul>
+
+        <div class="navBarContainer">
+            
+            <ul class="theSiteTitle">
                 <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
             </ul>
-            <ul id="hamburgerMenu">
-                <li><a href="#story">Histoire</a></li>
-                <li><a href="#characters">Personnages</a></li>
-                <li><a href="#place">Lieu</a></li>
-                <li><a href="#studio">Studio Koukaki</a></li>
-            </ul>
+            
+            <div class="closedMenu">
+
+                <button class="menuToggle" aria-controls="primary-menu" aria-expanded="false">
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                    <span class="line3"></span>
+                </button>
+
+            </div>
+            
+        </div>
+
+            <div class="openedMenu">
+
+                <ul id="hamburgerMenuLinks">
+                    <img class="imageLogoBurger" src="<?= get_template_directory_uri() . "/assets\images/logo.png" ?>" alt="Logo Fleurs d'oranger & chats errants">
+                    <li class="linkBurger1"><a class="activeLinks" href="#story">Histoire</a></li>
+                    <li class="linkBurger2"><a class="activeLinks" href="#characters">Personnages</a></li>
+                    <li class="linkBurger3"><a class="activeLinks" href="#place">Lieu</a></li>
+                    <li class="linkBurger4"><a class="activeLinks" href="#studio">Studio Koukaki</a></li>
+                </ul>
+
+                <ul class="bottomKoukaki">
+                    <li><a href="#smallStudioKoukaki">STUDIO KOUKAKI</a></li>
+                </ul>
+
+                <div class="imagesMenuOuvert">
+                    <img class="orchid" src="<?= get_stylesheet_directory_uri() . '/assets/orchid.png' ?>" alt="purple orchid">
+                    <img class="sunFlower" src="<?= get_stylesheet_directory_uri() . '/assets/Sunflower.png' ?>" alt="sun flower">
+                    <img class="blueCatHead" src="<?= get_stylesheet_directory_uri() . '/assets/blueCatHead.png' ?>" alt="head of blue cat">
+                    <img class="blackCatHead" src="<?= get_stylesheet_directory_uri() . '/assets/blackCatHead.png' ?>" alt="head of black cat">
+                    <img class="yellowCatHead" src="<?= get_stylesheet_directory_uri() . '/assets/yellowCatHead.png' ?>" alt="yellow cat head">
+                    <img class="hibiscus" src="<?= get_template_directory_uri() . '/assets\images/Hibiscus.png' ?>" alt="red hibiscus">
+                    <img class="orangeFlowerBall" src="<?= get_template_directory_uri() . '/assets\images/flower.png' ?>" alt="orange flower ball">
+                    <img class="superRandomFlower" src="<?= get_template_directory_uri() . '/assets\images/random_flower.png' ?>" alt="a very random flower">
+                </div>
+
+            </div>
 
 		</nav><!-- #site-navigation -->
+
 	</header><!-- #masthead -->

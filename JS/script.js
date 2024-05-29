@@ -1,3 +1,26 @@
+// Hamburger Menu
+// Turning button from lines to a cross
+const menuLine1 = document.querySelector(".line1");
+const menuLine2 = document.querySelector(".line2");
+const menuLine3 = document.querySelector(".line3");
+const buttonMenu = document.querySelector(".menuToggle");
+const burgerLinks = document.querySelectorAll(".activeLinks");
+const openedMenu = document.querySelector(".openedMenu");
+
+buttonMenu.addEventListener("click", () => {
+  menuLine1.classList.toggle("line1Transform");
+  menuLine2.classList.toggle("hidden");
+  menuLine3.classList.toggle("line3Transform");
+  buttonMenu.classList.toggle("calibrateCross");
+  openedMenu.classList.toggle("openingTheMenu");
+});
+
+// burgerLinks.forEach((link) => {
+//   link.addEventListener("click", () => {
+//     nav.classList.remove("active");
+//   });
+// });
+
 // Animations au scroll
 // Calling the DOM elements with variables
 const fadeInBottom = document.querySelectorAll(".fadeIn");
