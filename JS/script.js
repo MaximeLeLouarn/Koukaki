@@ -86,6 +86,21 @@ gsap.to(".cloud", {
     scrub: 1,
   },
 });
+
+// For the logo
+const scrollTheLogo = document.querySelector(".scrollingLogo");
+const sectionBanner = document.querySelector(".banner");
+
+gsap.to(scrollTheLogo, {
+  y: sectionBanner.clientHeight - scrollTheLogo.clientHeight,
+  ease: "none",
+  scrollTrigger: {
+    trigger: sectionBanner,
+    start: "top top",
+    end: "bottom top",
+    scrub: 1,
+  },
+});
 // Going through the scroll
 // Implementing the scroll
 // let scrollPosition = 0;

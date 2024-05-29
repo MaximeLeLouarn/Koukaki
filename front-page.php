@@ -8,11 +8,13 @@ get_header();
 
             <div class="bannerContainer">
 
-            <video id="bgcVdo" autoplay loop muted z-index=2 position=absolute poster="<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?>" alt="image de la bannière fleurs et chats">
-                <source src="<?php echo get_stylesheet_directory_uri() . '/assets/videoHeader.mp4'; ?>" alt="video bannière fleurs et chats" type="video/mp4">
-            </video>
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants" z-index=3 position=absolute>
+                <video id="bgcVdo" autoplay loop muted z-index=2 position=absolute poster="<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?>" alt="image de la bannière fleurs et chats">
+                    <source src="<?php echo get_stylesheet_directory_uri() . '/assets/videoHeader.mp4'; ?>" alt="video bannière fleurs et chats" type="video/mp4">
+                </video>
+                <img class="scrollingLogo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants" z-index=3 position=absolute>
 
+                <img class="savePhone" src="<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?>" alt="image de la bannière fleurs et chats">
+            
             </div>
 
         </section>

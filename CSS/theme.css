@@ -201,6 +201,10 @@ header#masthead nav#site-navigation {
 .banner {
   background-image: none;
   min-height: 1px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .banner .bannerContainer {
   max-width: 100%;
@@ -210,12 +214,25 @@ header#masthead nav#site-navigation {
 .banner .bannerContainer video#bgcVdo {
   width: 100%;
 }
-.banner .bannerContainer img {
-  position: fixed;
+.banner .bannerContainer .savePhone {
+  display: none;
+}
+.banner .bannerContainer .scrollingLogo {
+  position: absolute;
   top: 35%;
   left: 25%;
 }
 
+@media screen and (max-width: 700px) {
+  .bannerContainer Video#bgcVdo {
+    display: none;
+  }
+  .bannerContainer .savePhone {
+    display: flex !important;
+    width: 100%;
+    margin-top: 0;
+  }
+}
 .oscarSection {
   display: flex;
 }
@@ -363,7 +380,7 @@ header#masthead nav#site-navigation {
   .imagesMenuOuvert .hibiscus {
     animation: rotate 15s linear infinite;
   }
-  .banner .bannerContainer img {
+  .banner .bannerContainer .scrollingLogo {
     animation: parallaxe 3s infinite alternate;
   }
   .fadeInBottom {
@@ -479,6 +496,28 @@ header#masthead nav#site-navigation {
   }
   100% {
     transform: translate3d(0, 0, 10px);
+  }
+}
+@media screen and (max-width: 700px) {
+  @keyframes parallaxe {
+    0% {
+      transform: translate3d(0, 0, 10px);
+    }
+    20% {
+      transform: translate3d(-5px, -5px, 0);
+    }
+    40% {
+      transform: translate3d(-5px, 5px, 0);
+    }
+    60% {
+      transform: translate3d(5px, 5px, 0);
+    }
+    80% {
+      transform: translate3d(5px, -5px, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 10px);
+    }
   }
 }
 @keyframes slideInTitles {

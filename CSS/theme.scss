@@ -219,6 +219,10 @@ header#masthead {
 .banner {
     background-image: none;
     min-height: 1px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     .bannerContainer {
         max-width: 100%;
         width: 100%;
@@ -229,10 +233,25 @@ header#masthead {
             // animation-iteration-count: 1;
             // animation-fill-mode: both;
         }
-        & img {
-            position: fixed;
+        .savePhone {
+            display: none;
+        }
+        .scrollingLogo {
+            position: absolute;
             top: 35%;
             left: 25%;
+        }
+    }
+}
+@media screen and (max-width: 700px) {
+    .bannerContainer {
+        Video#bgcVdo {
+            display: none;
+        }
+        .savePhone {
+            display: flex !important;
+            width: 100%;
+            margin-top: 0;
         }
     }
 }
@@ -403,7 +422,7 @@ header#masthead {
     // Logo parallaxe
     .banner {
         .bannerContainer {
-            img {
+            .scrollingLogo {
                 animation: parallaxe 3s infinite alternate;
             }
         }
@@ -537,6 +556,28 @@ header#masthead {
     }
     100% {
         transform: translate3d(0, 0, 10px);
+    }
+}
+@media screen and (max-width: 700px) {
+    @keyframes parallaxe {
+        0% {
+            transform: translate3d(0, 0, 10px);
+        }
+        20% {
+            transform: translate3d(-5px, -5px, 0);
+        }
+        40% {
+            transform: translate3d(-5px, 5px, 0);
+        }
+        60% {
+            transform: translate3d(5px, 5px, 0);
+        }
+        80% {
+            transform: translate3d(5px, -5px, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 10px);
+        }
     }
 }
 
