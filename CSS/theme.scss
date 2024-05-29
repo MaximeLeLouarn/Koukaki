@@ -11,13 +11,23 @@ div#page {
 .hidden {
     display: none !important;
 }
+header#masthead {
+    height: 80px;
+    nav#site-navigation {
+        height: 100%;
+    }
+}
+.main-navigation ul .site-title {
+    display: flex;
+}
+.main-navigation ul {
+    display: flex;
+}
 .main-navigation.toggled ul {
     display: flex;
     flex-direction: column;
 }
-.activeForBurgerLinks {
-    text-shadow: 14px #ff5c00;
-}
+
 // -- Lines of button
 .line1Transform {
     transform: rotate(45deg);
@@ -50,10 +60,12 @@ div#page {
         font-size: 2.4rem;
         font-weight: 400;
         color: black;
+        &:hover {
+            text-shadow: 2px 2px 14px #ff5c00;
+        }
     }
     .imageLogoBurger {
         height: 70px;
-        // box-shadow: 14px 14px 14px #ff5c00;
     }
     .bottomKoukaki {
         bottom: 3%;
@@ -229,16 +241,25 @@ div#page {
 .oscarSection {
     display: flex;
     .oscarContainer {
+        height: 200px;
         display: flex;
         width: 66.66%;
         margin: auto;
+        margin-top: none;
+        margin-bottom: none;
         .oscarParagraphe {
-            text-align: center;
-            padding: 0;
-            background-image: url(../assets/orange_characters_bg.png);
+            height: 100%;
+            width: 70%;
+            padding: 50px;
+            font-family: "Quicksand";
+            background-image: url(../assets/texteNominationImg.png);
+            background-position: cover;
+            background-repeat: no-repeat;
+            background-size: 100%;
         }
         img {
             height: 129px;
+            margin: auto;
         }
     }
 }
@@ -441,21 +462,8 @@ div#page {
     }
 
     // Slide in for the titles
-    .commonTitle {
-        top: 100px;
-        position: relative;
-        opacity: 0;
-    }
-    .rareTitle {
-        top: 50px;
-        position: relative;
-        opacity: 0;
-    }
-    .slideTitle {
-        position: relative;
-        top: 0px;
-        transition: top 5s;
-        opacity: 1;
+    .slideInTitle {
+        animation: slideInTitles 3s ease both;
     }
 }
 
@@ -529,5 +537,16 @@ div#page {
     }
     100% {
         transform: translate3d(0, 0, 10px);
+    }
+}
+
+@keyframes slideInTitles {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
     }
 }

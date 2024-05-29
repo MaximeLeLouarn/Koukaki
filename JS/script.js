@@ -24,7 +24,7 @@ buttonMenu.addEventListener("click", () => {
 // Animations au scroll
 // Calling the DOM elements with variables
 const fadeInBottom = document.querySelectorAll(".fadeIn");
-const slideInTitle = document.querySelectorAll(".slideTitle");
+const slideTheTitle = document.querySelectorAll(".slideTitle");
 
 // Creating a variable to observ if the elements are visible on screen
 
@@ -49,10 +49,10 @@ const observerTitles = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("slideTitle");
+        entry.target.classList.add("slideInTitle");
         return;
       } else {
-        entry.target.classList.remove("slideTitle");
+        entry.target.classList.remove("slideInTitle");
       }
     });
   },
@@ -70,7 +70,7 @@ fadeInBottom.forEach((fade) => {
 });
 
 // For the titles
-slideInTitle.forEach((slide) => {
+slideTheTitle.forEach((slide) => {
   observerTitles.observe(slide);
 });
 
