@@ -5,6 +5,14 @@ body {
 div#page {
     overflow: hidden;
 }
+@media screen and (max-width: 470px) {
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+}
 
 // Hamburger Menu
 // -> The details
@@ -82,21 +90,6 @@ header#masthead {
         position: relative;
         height: 5%;
     }
-    // put the images in bg of the links
-    // .linkBurger1 {
-    //     a::before {
-    //         background-image: url(../assets/orchid.png);
-    //         background-size: 150px;
-    //         display: inline-block;
-    //         transform-origin: 80px 80px;
-    //         position: relative;
-    //         width: 150px;
-    //         height: 150px;
-    //         bottom: 10rem;
-    //         right: 21rem;
-    //         content: "";
-    //     }
-    // }
 
     // the imgs but not in bg
     .imagesMenuOuvert {
@@ -243,9 +236,6 @@ header#masthead {
         height: 100%;
         video#bgcVdo {
             width: 100%;
-            // animation: fadeInTop ease 3s;
-            // animation-iteration-count: 1;
-            // animation-fill-mode: both;
         }
         .savePhone {
             display: none;

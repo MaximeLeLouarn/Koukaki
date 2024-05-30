@@ -11,14 +11,6 @@ wp_enqueue_script('gsap-bundle', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/
 wp_enqueue_script('gsap-scroll-trigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js');
 wp_enqueue_script('gsap-scroll-plugin', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js');
 wp_enqueue_script('gsap-motionPath', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js');
-// wp_enqueue_script('gsap-timeline', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js');
-// wp_enqueue_script('gsap-tweenLite', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js');
-// wp_enqueue_script('gsap-css', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js');
-// wp_enqueue_script('gsap-bezier', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/BezierPlugin.min.js');
-// wp_enqueue_script('scroll-magic', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js');
-// wp_enqueue_script('scroll-magic-debug', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.js');
-// wp_enqueue_script('scroll-magic-animations', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js');
-
 
 // Get customizer options form parent theme
 if ( get_stylesheet() !== get_template() ) {
