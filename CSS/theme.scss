@@ -27,6 +27,15 @@ header#masthead {
     display: flex;
     flex-direction: column;
 }
+.fixedMenu {
+    position: fixed !important;
+}
+.fixedNavBar {
+    height: 80px !important;
+    position: fixed;
+    max-width: 1440px;
+    width: 100% !important;
+}
 
 // -- Lines of button
 .line1Transform {
@@ -52,6 +61,7 @@ header#masthead {
     transition: 1s ease;
     #hamburgerMenuLinks {
         display: flex;
+        flex-direction: column;
         justify-content: start;
     }
     .activeLinks {
@@ -215,6 +225,10 @@ header#masthead {
     }
 }
 
+.slideTitle {
+    position: relative;
+}
+
 // Including the videos with the specificities
 .banner {
     background-image: none;
@@ -237,9 +251,13 @@ header#masthead {
             display: none;
         }
         .scrollingLogo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: absolute;
             top: 35%;
             left: 25%;
+            transform: translateY(-50%);
         }
     }
 }
@@ -267,18 +285,46 @@ header#masthead {
         margin-top: none;
         margin-bottom: none;
         .oscarParagraphe {
-            height: 100%;
-            width: 70%;
-            padding: 50px;
+            margin: 0;
+            padding: 25px 10%;
+            color: #fff5e9;
+            text-align: center;
+            font-size: 2em;
             font-family: "Quicksand";
             background-image: url(../assets/texteNominationImg.png);
-            background-position: cover;
             background-repeat: no-repeat;
-            background-size: 100%;
+            background-size: 100% 100%;
         }
         img {
-            height: 129px;
+            height: auto;
+            width: 20%;
             margin: auto;
+        }
+    }
+}
+@media screen and (max-width: 1040px) {
+    .oscarContainer {
+        .oscarParagraphe {
+            padding-top: 45px !important;
+            font-size: 1.4em !important;
+        }
+        img {
+            width: 30% !important;
+        }
+    }
+}
+@media screen and (max-width: 701px) {
+    .oscarSection {
+        padding-top: 0 !important;
+        .oscarContainer {
+            flex-direction: column !important;
+            .oscarParagraphe {
+                width: 100% !important;
+                font-size: 1.2em !important;
+            }
+            img {
+                width: 40% !important;
+            }
         }
     }
 }
@@ -482,6 +528,7 @@ header#masthead {
 
     // Slide in for the titles
     .slideInTitle {
+        position: relative;
         animation: slideInTitles 3s ease both;
     }
 }
@@ -583,11 +630,11 @@ header#masthead {
 
 @keyframes slideInTitles {
     0% {
-        transform: translateY(100px);
+        top: 50px;
         opacity: 0;
     }
     100% {
-        transform: translateY(0px);
+        top: 0px;
         opacity: 1;
     }
 }

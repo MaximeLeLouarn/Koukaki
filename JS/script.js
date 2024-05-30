@@ -4,15 +4,31 @@ const menuLine1 = document.querySelector(".line1");
 const menuLine2 = document.querySelector(".line2");
 const menuLine3 = document.querySelector(".line3");
 const buttonMenu = document.querySelector(".menuToggle");
-const burgerLinks = document.querySelectorAll(".activeLinks");
 const openedMenu = document.querySelector(".openedMenu");
+const navBar = document.querySelector(".navBarContainer");
+const burgerLinks = document.querySelectorAll(".activeLinks");
 
+// Deployement of the Menu
 buttonMenu.addEventListener("click", () => {
   menuLine1.classList.toggle("line1Transform");
   menuLine2.classList.toggle("hidden");
   menuLine3.classList.toggle("line3Transform");
   buttonMenu.classList.toggle("calibrateCross");
   openedMenu.classList.toggle("openingTheMenu");
+  openedMenu.classList.toggle("fixedMenu");
+  navBar.classList.toggle("fixedNavBar");
+});
+// Closing the menu when clicking on links
+burgerLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    menuLine1.classList.remove("line1Transform");
+    menuLine2.classList.remove("hidden");
+    menuLine3.classList.remove("line3Transform");
+    buttonMenu.classList.remove("calibrateCross");
+    openedMenu.classList.remove("openingTheMenu");
+    openedMenu.classList.remove("fixedMenu");
+    navBar.classList.remove("fixedNavBar");
+  });
 });
 
 // burgerLinks.forEach((link) => {
@@ -87,33 +103,40 @@ gsap.to(".cloud", {
   },
 });
 
-// For the logo
-const scrollTheLogo = document.querySelector(".scrollingLogo");
+// Logo touching bottom line section
+const logo = document.querySelector(".scrollingLogo");
 const sectionBanner = document.querySelector(".banner");
+const startScroll = 200;
+const maxTop = 53; // Maximum top position in percentage
 
-gsap.to(scrollTheLogo, {
-  y: sectionBanner.clientHeight - scrollTheLogo.clientHeight,
-  ease: "none",
-  scrollTrigger: {
-    trigger: sectionBanner,
-    start: "top top",
-    end: "bottom top",
-    scrub: 1,
-  },
-});
-// Going through the scroll
-// Implementing the scroll
-// let scrollPosition = 0;
-// let p = false;
-// window.addEventListener("scroll", () => {
-//   scrollPosition = window.scrollY;
+const updatePositions = () => {
+  const logoHeight = logo.offsetHeight;
+  const sectionHeight = sectionBanner.offsetHeight;
 
-//   if (!p) {
-//     window.requestAnimationFrame(() => {
-//       slideInBottom(scrollPosition);
-//       p = false;
-//     });
-//   }
+  window.addEventListener("scroll", function () {
+    const scrollPosition = window.scrollY;
 
-//   p = true;
-// });
+    if (
+      scrollPosition >= startScroll &&
+      scrollPosition < sectionHeight + startScroll - logoHeight
+    ) {
+      // Calculate the top position of the logo
+      const percentage =
+        (scrollPosition - startScroll) / (sectionHeight - logoHeight);
+      const newTop = 35 + 18 * percentage;
+      logo.style.top = `${newTop}%`;
+      logo.style.transform = `translateY(-${newTop}%)`;
+    } else if (scrollPosition < startScroll) {
+      // Reset the logo to its initial position
+      logo.style.top = `35%`;
+      logo.style.transform = `translateY(-50%)`;
+    } else {
+      // Fix the logo at the bottom of the first section
+      logo.style.top = `53%`;
+      logo.style.transform = `translateY(-100%)`;
+    }
+  });
+};
+
+updatePositions();
+window.addEventListener("resize", updatePositions);

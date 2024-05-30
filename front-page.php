@@ -15,6 +15,7 @@ get_header();
 
                 <img class="savePhone" src="<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?>" alt="image de la bannière fleurs et chats">
             
+                <div class="invisibleBanner"></div>
             </div>
 
         </section>

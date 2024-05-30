@@ -30,6 +30,17 @@ header#masthead nav#site-navigation {
   flex-direction: column;
 }
 
+.fixedMenu {
+  position: fixed !important;
+}
+
+.fixedNavBar {
+  height: 80px !important;
+  position: fixed;
+  max-width: 1440px;
+  width: 100% !important;
+}
+
 .line1Transform {
   transform: rotate(45deg);
 }
@@ -55,6 +66,7 @@ header#masthead nav#site-navigation {
 }
 .openingTheMenu #hamburgerMenuLinks {
   display: flex;
+  flex-direction: column;
   justify-content: start;
 }
 .openingTheMenu .activeLinks {
@@ -198,6 +210,10 @@ header#masthead nav#site-navigation {
   display: none;
 }
 
+.slideTitle {
+  position: relative;
+}
+
 .banner {
   background-image: none;
   min-height: 1px !important;
@@ -218,9 +234,13 @@ header#masthead nav#site-navigation {
   display: none;
 }
 .banner .bannerContainer .scrollingLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 35%;
   left: 25%;
+  transform: translateY(-50%);
 }
 
 @media screen and (max-width: 700px) {
@@ -245,20 +265,46 @@ header#masthead nav#site-navigation {
   margin-bottom: none;
 }
 .oscarSection .oscarContainer .oscarParagraphe {
-  height: 100%;
-  width: 70%;
-  padding: 50px;
+  margin: 0;
+  padding: 25px 10%;
+  color: #fff5e9;
+  text-align: center;
+  font-size: 2em;
   font-family: "Quicksand";
   background-image: url(../assets/texteNominationImg.png);
-  background-position: cover;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 .oscarSection .oscarContainer img {
-  height: 129px;
+  height: auto;
+  width: 20%;
   margin: auto;
 }
 
+@media screen and (max-width: 1040px) {
+  .oscarContainer .oscarParagraphe {
+    padding-top: 45px !important;
+    font-size: 1.4em !important;
+  }
+  .oscarContainer img {
+    width: 30% !important;
+  }
+}
+@media screen and (max-width: 701px) {
+  .oscarSection {
+    padding-top: 0 !important;
+  }
+  .oscarSection .oscarContainer {
+    flex-direction: column !important;
+  }
+  .oscarSection .oscarContainer .oscarParagraphe {
+    width: 100% !important;
+    font-size: 1.2em !important;
+  }
+  .oscarSection .oscarContainer img {
+    width: 40% !important;
+  }
+}
 .story h2::before {
   position: absolute;
 }
@@ -427,6 +473,7 @@ header#masthead nav#site-navigation {
     animation: rotate 8s linear infinite;
   }
   .slideInTitle {
+    position: relative;
     animation: slideInTitles 3s ease both;
   }
 }
@@ -522,11 +569,11 @@ header#masthead nav#site-navigation {
 }
 @keyframes slideInTitles {
   0% {
-    transform: translateY(100px);
+    top: 50px;
     opacity: 0;
   }
   100% {
-    transform: translateY(0px);
+    top: 0px;
     opacity: 1;
   }
 }/*# sourceMappingURL=theme.css.map */
