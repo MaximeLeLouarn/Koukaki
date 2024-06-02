@@ -29,6 +29,7 @@ header#masthead {
     display: flex;
 }
 .main-navigation ul {
+    padding-left: 0 !important;
     display: flex;
 }
 .main-navigation.toggled ul {
@@ -70,7 +71,8 @@ header#masthead {
     #hamburgerMenuLinks {
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: space-evenly;
+        margin-bottom: 5%;
     }
     .activeLinks {
         padding-top: 1rem;
@@ -83,7 +85,7 @@ header#masthead {
         }
     }
     .imageLogoBurger {
-        height: 70px;
+        height: 100px;
     }
     .bottomKoukaki {
         bottom: 3%;
@@ -95,66 +97,227 @@ header#masthead {
     .imagesMenuOuvert {
         .orchid {
             position: absolute;
-            top: 2em;
-            left: -2.3em;
-            height: 90px;
-            width: 90px;
+            top: 6em;
+            left: -5em;
+            height: 170px;
+            width: 170px;
         }
         .blueCatHead {
             position: absolute;
-            top: 6em;
-            left: 15em;
-            height: 60px;
-            width: 60px;
+            top: 16em;
+            left: 21em;
+            height: 120px;
+            width: 120px;
         }
         .blackCatHead {
             position: absolute;
-            bottom: 11em;
-            right: 12em;
-            height: 60px;
-            width: 60px;
+            bottom: 26em;
+            right: 17em;
+            height: 120px;
+            width: 120px;
         }
         .yellowCatHead {
             position: absolute;
-            bottom: 3em;
-            left: 3em;
-            height: 50px;
-            width: 50px;
+            bottom: 7em;
+            left: 5em;
+            height: 100px;
+            width: 100px;
         }
         .sunFlower {
             position: absolute;
-            top: 2.5em;
+            top: 10em;
             right: 8em;
-            height: 115px;
-            width: 115px;
+            height: 180px;
+            width: 180px;
         }
         .superRandomFlower {
             position: absolute;
-            top: 13em;
-            right: -1.3em;
-            height: 40px;
-            width: 40px;
+            top: 35em;
+            right: -3em;
+            height: 90px;
+            width: 90px;
         }
         .orangeFlowerBall {
             position: absolute;
-            bottom: 15em;
-            left: 10em;
-            height: 40px;
-            width: 40px;
+            bottom: 28em;
+            left: 12em;
+            height: 90px;
+            width: 90px;
         }
         .hibiscus {
             position: absolute;
-            bottom: -10.5em;
-            right: -10.5em;
-            height: 300px;
-            width: 300px;
+            bottom: -17.5em;
+            right: -17.5em;
+            height: 500px;
+            width: 500px;
             filter: blur(1px);
         }
     }
 }
+
+//Media querries to resize the images depending on the vh and vw size
+@media screen and (max-width: 1000px) {
+    .yellowCatHead {
+        left: 5em !important;
+        height: 80px !important;
+        width: 80px !important;
+    }
+    .blackCatHead {
+        right: 13em !important;
+        height: 90px !important;
+        width: 90px !important;
+    }
+    .blueCatHead {
+        left: 12em !important;
+        height: 90px !important;
+        width: 90px !important;
+    }
+    .orangeFlowerBall {
+        left: 11em !important;
+        height: 80px !important;
+        width: 80px !important;
+    }
+    .sunFlower {
+        right: 7em !important;
+    }
+    .orchid {
+        height: 150px !important;
+        width: 150px !important;
+    }
+    .imageLogoBurger {
+        height: 80px !important;
+    }
+}
+@media screen and (max-width: 800px) {
+    .yellowCatHead {
+        left: 3em !important;
+    }
+    .blackCatHead {
+        right: 8em !important;
+    }
+    .blueCatHead {
+        left: 8em !important;
+    }
+    .orangeFlowerBall {
+        left: 7em !important;
+    }
+    .sunFlower {
+        right: 5em !important;
+    }
+}
+
 @media screen and (max-width: 700px) {
     .imagesMenuOuvert {
         display: none;
+    }
+}
+
+@media screen and (max-height: 1100px) {
+    .yellowCatHead {
+        bottom: 5em;
+    }
+    .blackCatHead {
+        bottom: 23em !important;
+    }
+    .blueCatHead {
+        top: 14em !important;
+    }
+    .orangeFlowerBall {
+        bottom: 25em !important;
+    }
+    .superRandomFlower {
+        top: 30em !important;
+    }
+    .sunFlower {
+        top: 8em !important;
+    }
+    .orchid {
+        top: 5em !important;
+    }
+    .imageLogoBurger {
+        height: 100px;
+    }
+}
+@media screen and (max-height: 900px) {
+    .blackCatHead {
+        bottom: 18em !important;
+    }
+    .blueCatHead {
+        top: 10em !important;
+    }
+    .orangeFlowerBall {
+        bottom: 20em !important;
+    }
+    .superRandomFlower {
+        top: 20em !important;
+    }
+    .sunFlower {
+        top: 5em !important;
+    }
+    .orchid {
+        top: 3em !important;
+    }
+    .hibiscus {
+        height: 400px !important;
+        width: 400px !important;
+        bottom: -14.3em !important;
+        right: -14.3em !important;
+    }
+}
+@media screen and (max-height: 700px) {
+    .blackCatHead {
+        bottom: 10em !important;
+    }
+    .blueCatHead {
+        top: 7.5em !important;
+    }
+    .yellowCatHead {
+        bottom: 3em !important;
+    }
+    .orangeFlowerBall {
+        bottom: 11em !important;
+    }
+    .superRandomFlower {
+        top: 13em !important;
+    }
+    .sunFlower {
+        top: 2em !important;
+        height: 150px;
+        width: 150px;
+    }
+    .orchid {
+        top: 3em !important;
+    }
+    .hibiscus {
+        height: 300px !important;
+        width: 300px !important;
+        bottom: -10.5em !important;
+        right: -10.4em !important;
+    }
+}
+@media screen and (max-height: 500px) {
+    .imagesMenuOuvert {
+        .orchid {
+            top: 2em !important;
+        }
+        .blueCatHead {
+            top: 5.5em !important;
+        }
+        .blackCatHead {
+            bottom: 9em !important;
+        }
+        .yellowCatHead {
+            bottom: 3em !important;
+        }
+        .sunFlower {
+            top: 2.5em !important;
+        }
+        .superRandomFlower {
+            top: 13em !important;
+        }
+        .orangeFlowerBall {
+            bottom: 11em !important;
+        }
     }
 }
 
@@ -215,6 +378,8 @@ header#masthead {
     }
     .openedMenu {
         display: none;
+        max-width: 1442px;
+        overflow: hidden;
     }
 }
 
